@@ -2,6 +2,12 @@
 """
 Extract Kindle book pages by connecting to existing Chrome via CDP.
 
+NOTE (2026-03-07): Chrome/xvfb automation stack on sys1 (100.86.218.108) is
+DISABLED. The CDP_ENDPOINT below (100.86.218.108:9223) is stale. Chrome DevTools
+MCP now uses local Chrome on the workstation (localhost:9223). This script needs
+updating to point at a working Chrome instance before use.
+
+Original design:
 The server browser is already logged into Amazon. This script:
 1. Connects to Chrome via CDP endpoint
 2. Opens the book in Kindle Cloud Reader
@@ -25,6 +31,7 @@ import json
 from pathlib import Path
 from playwright.async_api import async_playwright
 
+# STALE — sys1 Chrome is disabled. See module docstring.
 CDP_ENDPOINT = "http://100.86.218.108:9223"
 
 async def extract_book(asin: str):
