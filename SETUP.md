@@ -6,9 +6,9 @@
 
 `.env` file configured with:
 - `AMAZON_EMAIL` - Kindle account
-- `AMAZON_PASSWORD` - From `/life-etc/sites/amazon.com/auth.yaml`
+- `AMAZON_PASSWORD` - From `/isaac-workspace-corpus/etc/sites/amazon.com/auth.yaml`
 - `ASIN` - Currently set to B001EL6RWY ("Who" by Geoff Smart)
-- `OPENAI_API_KEY` - From `/life-etc/api-keys/openai-books.key`
+- `OPENAI_API_KEY` - From `/isaac-workspace-corpus/etc/api-keys/openai-books.key`
 
 ## To Extract a Different Book
 
@@ -20,7 +20,7 @@
 
 From WSL with interop enabled:
 ```bash
-cd /mnt/d/obs/life-code/kindle-ai-export
+cd /home/rrobinson/projects/kindle-ai-export
 powershell.exe -Command "npx tsx src/extract-kindle-book.ts"
 powershell.exe -Command "npx tsx src/transcribe-book-content.ts"
 powershell.exe -Command "npx tsx src/export-book-markdown.ts"
